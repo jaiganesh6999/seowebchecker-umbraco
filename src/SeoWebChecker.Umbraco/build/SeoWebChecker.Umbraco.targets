@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SeoWebCheckerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\SeoWebChecker\**\*.*</SeoWebCheckerContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopySeoWebCheckerAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <SeoWebCheckerContentFiles Include="$(SeoWebCheckerContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying SEOWebChecker Umbraco App_Plugins files: $(SeoWebCheckerContentFilesPath) - #@(SeoWebCheckerContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(SeoWebCheckerContentFiles)"
+          DestinationFiles="@(SeoWebCheckerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\SeoWebChecker\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" Condition="Exists('$(MSBuildThisFileDirectory)..\App_Plugins\SeoWebChecker')" />
+  </Target>
+</Project>

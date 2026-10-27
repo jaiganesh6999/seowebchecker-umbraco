@@ -1,0 +1,27 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Title": "SEOWebChecker SEO Audit for Umbraco",
+  "Description": "Comprehensive on-page search engine optimization (SEO) diagnostics, meta tag analyzer, and health checks for Umbraco websites by SEOWebChecker.",
+  "Category": "Editor Tools",
+  "AlternateCategory": "Analytics & Insights",
+  "LicenseTypes": [
+    "Free"
+  ],
+  "AuthorDetails": {
+    "Name": "SEOWebChecker",
+    "Url": "https://seowebchecker.com/",
+    "Description": "Privacy-first website SEO diagnostic and auditing engine."
+  },
+  "DocumentationUrl": "https://github.com/jaiganesh6999/seowebchecker-umbraco#readme",
+  "IssueTrackerUrl": "https://github.com/jaiganesh6999/seowebchecker-umbraco/issues",
+  "Tags": [
+    "seo",
+    "audit",
+    "seowebchecker",
+    "meta-tags",
+    "healthcheck",
+    "opengraph",
+    "twitter-cards",
+    "technical-seo"
+  ]
+}

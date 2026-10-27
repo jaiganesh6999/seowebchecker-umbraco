@@ -1,0 +1,14 @@
+{
+  "name": "SEOWebChecker SEO Audit",
+  "version": "1.0.0",
+  "allowPackageTelemetry": true,
+  "dashboards": [
+    {
+      "alias": "seoWebCheckerDashboard",
+      "name": "SEOWebChecker Audit",
+      "view": "/App_Plugins/SeoWebChecker/dashboard.html",
+      "sections": [ "content", "settings" ],
+      "weight": 10
+    }
+  ]
+}

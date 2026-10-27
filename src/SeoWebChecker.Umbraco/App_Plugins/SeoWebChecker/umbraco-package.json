@@ -1,0 +1,24 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "id": "SeoWebChecker.Umbraco",
+  "name": "SEOWebChecker SEO Audit",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "type": "dashboard",
+      "alias": "SeoWebChecker.Dashboard",
+      "name": "SEOWebChecker SEO Audit",
+      "element": "/App_Plugins/SeoWebChecker/dashboard.js",
+      "meta": {
+        "label": "SEO Audit",
+        "pathname": "seo-audit"
+      },
+      "conditions": [
+        {
+          "alias": "Umb.Condition.SectionAlias",
+          "match": "Umb.Section.Content"
+        }
+      ]
+    }
+  ]
+}
