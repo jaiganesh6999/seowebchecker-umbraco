@@ -1,0 +1,33 @@
+name: Publish to NuGet
+
+on:
+  release:
+    types: [published]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Required for NuGet Trusted Publishing (OIDC)
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+
+      - name: Pack NuGet Package
+        run: dotnet pack src/SeoWebChecker.Umbraco/SeoWebChecker.Umbraco.csproj -c Release -o nupkg
+
+      - name: Push to NuGet.org via Trusted Publishing
+        run: dotnet nuget push nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
